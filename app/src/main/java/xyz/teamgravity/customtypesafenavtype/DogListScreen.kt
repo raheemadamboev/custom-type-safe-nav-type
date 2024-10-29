@@ -18,7 +18,10 @@ fun DogListScreen(
     LazyColumn(
         modifier = Modifier.fillMaxSize()
     ) {
-        items(DogData.VALUE) { dog ->
+        items(
+            items = DogData.VALUE,
+            key = { it.first.id }
+        ) { dog ->
             Text(
                 text = dog.first.name,
                 modifier = Modifier
